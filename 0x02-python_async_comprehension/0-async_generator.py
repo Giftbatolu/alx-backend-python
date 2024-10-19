@@ -7,7 +7,7 @@ import random
 from typing import List
 
 
-async def async_generator() -> List[float]:
+async def async_generator(None) -> List[float]:
     """
         A coroutine function that takes no argument and
         return a list of float.
