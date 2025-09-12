@@ -51,3 +51,13 @@ python-generators-0x00/
 ├── 1-main.py             # Test script for row streaming
 ├── 2-main.py             # Test script for batch processing
 ├── 3-main.py             # Test script for lazy pagination
+
+```
+## Database Setup
+- Database name: ALX_prodev
+- Table name: user_data
+- Fields
+    - user_id – UUID (Primary Key, Indexed)
+    - name – VARCHAR, not null
+    - email – VARCHAR, not null
+    - age – DECIMAL, not null
