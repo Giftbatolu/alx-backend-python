@@ -2,7 +2,7 @@
 
 import seed
 
-def stream_users_in_batches(batch_size):
+def stream_user_ages():
     """
    Generator that yields user ages one by one from user_data table.
     """
