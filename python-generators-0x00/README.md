@@ -35,7 +35,8 @@ pip install mysql-connector-python
 
 ## Project Structure
 
-```python-generators-0x00/
+```
+python-generators-0x00/
 ├── seed.py               # Sets up and seeds the MySQL database
 ├── 0-stream_users.py     # Generator to stream users row-by-row
 ├── 1-batch_processing.py # Generator for batch processing and filtering
