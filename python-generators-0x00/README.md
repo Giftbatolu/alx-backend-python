@@ -29,7 +29,7 @@ Before starting, ensure you meet the following requirements:
 - Python 3.7+
 - MYSQL server installed and running locally
 - Basic knowledge of Database schema design & Data seeding
-- Python library:
+- Python library: ```
 pip install mysql-connector-python
 
 
