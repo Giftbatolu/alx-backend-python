@@ -26,18 +26,16 @@ This project demonstrates advanced usage of **Python generators** to handle **la
 
 Before starting, ensure you meet the following requirements:
 
-- Python 3.x
-- Understanding of `yield` and Python generators
-- Familiarity with SQL (MySQL and SQLite)
-- Basic knowledge of:
-  - Database schema design
-  - Data seeding
-- Git and GitHub for version control
+- Python 3.7+
+- MYSQL server installed and running locally
+- Basic knowledge of Database schema design & Data seeding
+- Python library:
+```pip install mysql-connector-python
+
 
 ## Project Structure
 
-python-generators-0x00/
-│
+```python-generators-0x00/
 ├── seed.py               # Sets up and seeds the MySQL database
 ├── 0-stream_users.py     # Generator to stream users row-by-row
 ├── 1-batch_processing.py # Generator for batch processing and filtering
