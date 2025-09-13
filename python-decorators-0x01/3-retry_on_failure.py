@@ -9,6 +9,7 @@ def with_db_connection(func):
     def wrapper(*args, **kwargs):
         conn = sqlite3.connect('users.db')
         time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"[{time_stamp}] Attempt {attempt}...")
         try:
             results = func(conn, *args, **kwargs)
             print(f"[{time_stamp}] Function '{func.__name__}' executed successfully.")
