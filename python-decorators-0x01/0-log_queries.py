@@ -1,5 +1,6 @@
 import sqlite3
 import functools
+from datetime import datetime
 
 def initialize_db():
     """Initialize user_data table in users.db database."""
@@ -49,13 +50,18 @@ def log_queries(func):
     def wrapper(*args, **kwargs):
         # Extract the SQL query from arguments (assuming first positional arg or 'query' kwarg)
         query = kwargs.get('query') if 'query' in kwargs else (args[0] if args else None)
-        if query:
-            print(f"[LOG] Executing SQL query: {query}")
-        else:
-            print("[LOG] No SQL query found to log.")
-        return func(*args, **kwargs)
+        time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"[{time_stamp}] Executing query: {query}")
+        try:
+            results = func(*args, **kwargs)
+            print(f"[{time_stamp}] Query executed successfully.")
+            return results
+        except Exception as e:
+            print(f"[{time_stamp}] Error executing query: {e}")
+            raise
     return wrapper
 
+#### function to fetch all users from the database
 @log_queries
 def fetch_all_users(query):
     conn = sqlite3.connect('users.db')
