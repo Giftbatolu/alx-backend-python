@@ -12,6 +12,7 @@ class User(AbstractUser):
 
     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True, db_index=True)
     email = models.EmailField(unique=True, null=False)
+    password_hash = models.CharField(max_length=128, null=False)
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     role = models.CharField(max_length=10, choices=ROLES, default='user')
     created_at = models.DateTimeField(default=timezone.now)
